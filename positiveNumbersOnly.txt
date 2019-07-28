@@ -1,0 +1,11 @@
+validate : function(component, event, helper) {
+	let negative = /-(?=[0-9])/g;
+	let positive = /[0-9]/g; 
+	let text = component.get("v.validateValue");
+	if (text.match(positive)!=null && text.match(negative)==null){
+		component.set("v.isValid", true);
+	} 
+	else{
+		component.set("v.isValid", false);
+	}
+}
